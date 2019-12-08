@@ -1,6 +1,6 @@
-# RedditBot
+# FrontearBot
 
-A simple python wrapper for PRAW, the Reddit API wrapper. This is designed to make it far easier to quickly get a reddit bot working, and have it perform complex tasks with very minimal programming.
+A Reddit bot that has some functionality. Yeah, I don't know much either. It'll do stuff though
 
 ## Getting Started
 
