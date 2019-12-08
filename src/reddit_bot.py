@@ -1,9 +1,8 @@
-import json
 import praw
 
 def main():
-    bot = praw.Reddit("RedditBot")
-    print("Logged in as %s" % bot.user.me())
+    reddit = praw.Reddit("RedditBot")
+    print("Logged in as %s" % reddit.user.me())
 
     return 0
 
