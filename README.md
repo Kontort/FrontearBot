@@ -18,6 +18,8 @@ A simple python wrapper for PRAW, the Reddit API wrapper. This is designed to ma
     }
     ```
 
+    Please see this [wiki](https://github.com/Kontort/RedditBot/wiki/Information-about-info.json) post for more information about this file
+
 ## License
 
 This project is licensed under the [GNU General Public License v3](https://tldrlegal.com/license/gnu-general-public-license-v3-(gpl-3)) &#8212; you may copy, distribute and modify the software as long as you track changes/dates in source files.
