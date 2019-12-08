@@ -2,23 +2,9 @@
 
 A simple python wrapper for PRAW, the Reddit API wrapper. This is designed to make it far easier to quickly get a reddit bot working, and have it perform complex tasks with very minimal programming.
 
-## Usage
+## Getting Started
 
-- Although not required, it's recommended that you create a fresh reddit account, then create an [application](https://www.reddit.com/prefs/apps/)
-- Install [PRAW](https://praw.readthedocs.io/en/latest/) via `pip install praw`
-- Create an **./info.json**, and populate it according to the following format:
-
-    ```json
-    {
-        "username": "",
-        "password": "",
-        "client_id": "",
-        "client_secret": "",
-        "user_agent": ""
-    }
-    ```
-
-    Please see this [wiki](https://github.com/Kontort/RedditBot/wiki/Information-about-info.json) post for more information about this file
+Please read the [Wiki](https://github.com/Kontort/RedditBot/wiki/Getting-Started) for help on getting started. Alternatively, please see the [PRAW](https://praw.readthedocs.io/en/latest/index.html) docs.
 
 ## License
 
