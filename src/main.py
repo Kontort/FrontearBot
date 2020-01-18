@@ -1,14 +1,14 @@
-import praw
+from praw import Reddit
 from praw.models import Comment
 from sys import argv
-import logging
+from logging import StreamHandler, getLogger, DEBUG
 
 def setup_logging():
-    handler = logging.StreamHandler()
-    handler.setLevel(logging.DEBUG)
+    handler = StreamHandler()
+    handler.setLevel(DEBUG)
 
-    logger = logging.getLogger("prawcore")
-    logger.setLevel(logging.DEBUG)
+    logger = getLogger("prawcore")
+    logger.setLevel(DEBUG)
     
     logger.addHandler(handler)
 
@@ -26,7 +26,7 @@ def command_rand(msg):
     )
 
 def main():
-    reddit = praw.Reddit("FrontearBot")
+    reddit = Reddit("FrontearBot")
     print("Logged in as %s" % reddit.user.me())
 
     for msg in reddit.inbox.unread():
