@@ -1,8 +1,29 @@
 import praw
 from praw.models import Comment
+from sys import argv
 import logging
 
-DEBUG = False # if you wish to log at the debugging level. This shouldn't ideally be active unless necessary
+def setup_logging():
+    handler = logging.StreamHandler()
+    handler.setLevel(logging.DEBUG)
+
+    logger = logging.getLogger("prawcore")
+    logger.setLevel(logging.DEBUG)
+    
+    logger.addHandler(handler)
+
+def command_help(msg):
+    msg.reply(
+        "Here's a list of supported commands:"
+        "\n\n1. --rand"
+        "\n\n"
+    )
+
+def command_rand(msg):
+    msg.reply(
+        "I can't be bothered. Here, the random number is 2"
+        "\n\n"
+    )
 
 def main():
     reddit = praw.Reddit("FrontearBot")
@@ -12,20 +33,16 @@ def main():
         if not isinstance(msg, Comment):
             continue
 
-        if msg.body == "u/FrontearBot --help" or msg.body == "u/Frontear \\--help": # the backslash is added by the new website format thing. what even...
+        if "u/FrontearBot --" in msg.body:
             msg.mark_read()
-            msg.reply("This is a valid call!")
+
+            if "help" in msg.body:
+                command_help(msg)
+            elif "rand" in msg.body:
+                command_rand(msg)
 
     return 0
 
 if __name__ == "__main__":
-    if DEBUG:
-        handler = logging.StreamHandler()
-        handler.setLevel(logging.DEBUG)
-
-        logger = logging.getLogger("prawcore")
-        logger.setLevel(logging.DEBUG)
-    
-        logger.addHandler(handler)
-
+    setup_logging()
     print("\nExited with code %d" % main())
